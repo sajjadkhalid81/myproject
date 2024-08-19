@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Enhanced HTML Page</title>
+    <title>Enhanced Webpage</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
+            color: #333;
         }
         header {
-            background-color: #333;
+            background-color: #444;
             color: white;
             padding: 10px 0;
             position: fixed;
@@ -20,39 +21,92 @@
             top: 0;
             left: 0;
             z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         header nav {
             display: flex;
             justify-content: center;
+            align-items: center;
+            gap: 20px;
         }
         header nav a {
             color: white;
-            padding: 14px 20px;
             text-decoration: none;
             font-weight: bold;
+            padding: 10px 15px;
+            transition: background-color 0.3s;
         }
         header nav a:hover {
-            background-color: #575757;
+            background-color: #555;
         }
         .hero {
-            background: url('https://via.placeholder.com/1500x500') no-repeat center center/cover;
+            background: url('https://via.placeholder.com/1500x600') no-repeat center center/cover;
             color: white;
             text-align: center;
             padding: 100px 20px;
         }
         .hero h1 {
-            font-size: 3em;
+            font-size: 4em;
             margin: 0;
+            line-height: 1.2;
+        }
+        .hero p {
+            font-size: 1.5em;
+            margin: 20px 0 0;
         }
         main {
             padding: 20px;
-            margin-top: 60px; /* Adjust based on header height */
+            margin-top: 60px;
+        }
+        .carousel {
+            position: relative;
+            width: 100%;
+            max-height: 500px;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+        .carousel img {
+            width: 100%;
+            height: auto;
+            transition: opacity 1s;
+        }
+        .carousel .slides {
+            display: flex;
+            width: 300%;
+            transition: transform 0.5s ease;
+        }
+        .carousel .slides img {
+            width: 33.33%;
+        }
+        .carousel-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        .carousel-controls button {
+            background-color: rgba(0,0,0,0.5);
+            border: none;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+        .carousel-controls button:hover {
+            background-color: rgba(0,0,0,0.8);
         }
         section {
             margin-bottom: 40px;
         }
         h2 {
-            color: #333;
+            color: #444;
+            font-size: 2em;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
         }
         ul {
             list-style-type: none;
@@ -61,68 +115,5 @@
         ul li {
             background-color: #fff;
             margin: 5px 0;
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
-
-    <div class="hero" id="home">
-        <h1>Welcome to My Enhanced Website</h1>
-        <p>Your journey to amazing content starts here.</p>
-    </div>
-
-    <main>
-        <section id="about">
-            <h2>About Us</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Integer vel turpis eu lorem sagittis egestas non nec magna.</p>
-            <img src="https://via.placeholder.com/600x400" alt="About Us Image" style="max-width: 100%; height: auto; border-radius: 8px;">
-        </section>
-
-        <section id="services">
-            <h2>Our Services</h2>
-            <ul>
-                <li>Service 1: Description of service 1.</li>
-                <li>Service 2: Description of service 2.</li>
-                <li>Service 3: Description of service 3.</li>
-            </ul>
-        </section>
-
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <form action="#" method="post">
-                <label for="name">Name:</label><br>
-                <input type="text" id="name" name="name" required><br><br>
-                <label for="email">Email:</label><br>
-                <input type="email" id="email" name="email" required><br><br>
-                <label for="message">Message:</label><br>
-                <textarea id="message" name="message" rows="4" required></textarea><br><br>
-                <button type="submit">Send</button>
-            </form>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 My Enhanced Website</p>
-    </footer>
-</body>
-</html>
+            padding: 15px;
+            border-radius: 8px;
